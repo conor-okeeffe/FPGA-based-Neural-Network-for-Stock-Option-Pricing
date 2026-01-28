@@ -1,0 +1,90 @@
+AcceleratorConfig:
+  Board: pynq-z2
+  Driver: python
+  Interface: axi_stream
+  Precision:
+    Input: float
+    Output: float
+Backend: VivadoAccelerator
+ClockPeriod: 5
+ClockUncertainty: 12.5%
+HLSConfig:
+  LayerName:
+    dense:
+      Precision:
+        bias: auto
+        result: auto
+        weight: auto
+      ReuseFactor: 60
+      Trace: false
+    dense_1:
+      Precision:
+        bias: auto
+        result: auto
+        weight: auto
+      ReuseFactor: 200
+      Trace: false
+    dense_1_relu:
+      Precision:
+        result: auto
+      Trace: false
+    dense_2:
+      Precision:
+        bias: auto
+        result: auto
+        weight: auto
+      ReuseFactor: 200
+      Trace: false
+    dense_2_relu:
+      Precision:
+        result: auto
+      Trace: false
+    dense_3:
+      Precision:
+        bias: auto
+        result: auto
+        weight: auto
+      ReuseFactor: 200
+      Trace: false
+    dense_3_relu:
+      Precision:
+        result: auto
+      Trace: false
+    dense_relu:
+      Precision:
+        result: auto
+      Trace: false
+    input_1:
+      Precision:
+        result: auto
+      Trace: false
+    output_1:
+      Precision:
+        bias: auto
+        result: auto
+        weight: auto
+      ReuseFactor: 10
+      Trace: false
+    output_1_linear:
+      Precision:
+        result: auto
+      Trace: false
+  Model:
+    BramFactor: 1000000000
+    Precision: ap_fixed<16,6>
+    ReuseFactor: 200
+    Strategy: Resource
+    TraceOutput: false
+IOType: io_parallel
+InputData: null
+KerasModel: !keras_model 'my_pynq_project/keras_model.keras'
+OutputDir: my_pynq_project
+OutputPredictions: null
+Part: xc7z020clg400-1
+ProjectName: myproject
+Stamp: 0e641409
+Version: 1.0.0
+WriterConfig:
+  Namespace: null
+  WriteTar: false
+  WriteWeightsTxt: true
