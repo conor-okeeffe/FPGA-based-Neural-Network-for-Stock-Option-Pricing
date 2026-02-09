@@ -3,7 +3,7 @@ import os
 from tensorflow.keras.models import load_model
 
 # 0. Putting Vitis on path - Linux approach
-vitis_hls_2023_2_path = '/user/masters/OkeeffeCJ/tools/Xilinx/Vitis     #ToDo: change this to correct path
+vitis_hls_2023_2_path = '/user/masters/OkeeffeCJ/tools/Xilinx/Vitis_HLS/2023.2'
 # Update environ variable to 2023.2 Vitis
 os.environ['XILINX_VITIS'] = vitis_hls_2023_2_path
 # Add Vitis 2023.2 to PATH
