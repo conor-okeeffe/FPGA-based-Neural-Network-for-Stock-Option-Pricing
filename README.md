@@ -2,7 +2,7 @@
 
 This project deploys a 31,101 parameter deep neural network onto a Xilinx Alveo U280 FPGA card using hls4ml, targeting real-time inference for European option pricing. The network takes six financial inputs (stock price, strike price, time to maturity, risk-free rate, volatility, dividends) and outputs a predicted option price.
 
-The implementation uses Reuse Factor = 10 for the hidden layers (100×100 dense, ×3), with RF = 1 kept for the smaller input and output layers. This was arrived at after earlier RF = 4 attempts hit Vivado routing congestion, as congestion levels were hitting 7, particularly around the DSP columns. Bumping to RF = 10 with Strategy = Resource got it through routing cleanly. RF = 4 could potentially work with manual p-block constraints within Vivado, or by attempting with the Latency parameter instead.
+The implementation uses Reuse Factor = 10 for the hidden layers (100×100 dense), with RF = 1 kept for the smaller input and output layers. This was arrived at after earlier RF = 4 attempts hit Vivado routing congestion, as congestion levels were hitting 7, particularly around the DSP columns. Bumping to RF = 10 with Strategy = Resource got it through routing cleanly. RF = 4 could potentially work with manual p-block constraints within Vivado, or by attempting with the Latency parameter instead.
 
 ## Main Script
 
